@@ -1,10 +1,11 @@
 import React from "react";
-import { Container, Form, Button, Nav, Navbar } from "react-bootstrap";
+import { Button, Nav, Navbar } from "react-bootstrap";
+import styles from "./header.module.scss";
 
 export function HeaderComponent() {
     return (
         <div>
-            <Navbar expand="lg">
+            <Navbar expand="lg" fixed="top">
                 <Navbar.Brand href="/">
                     Logo
                 </Navbar.Brand>

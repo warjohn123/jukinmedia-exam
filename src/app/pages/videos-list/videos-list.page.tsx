@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import { VideoApi } from "../../api/video.api";
 import { VideosListComponent } from "./components/videos-list.component";
+import { VideoFilterBarComponent } from "./components/video-filter-bar.component";
 import styles from "./videos-list.module.scss";
 
 export function VideosPage() {
@@ -19,13 +20,20 @@ export function VideosPage() {
 
     return (
 
+        <>
+            <section style={{ marginTop: 100 }}>
+                <Container>
+                    <VideoFilterBarComponent></VideoFilterBarComponent>
+                </Container>
+            </section>
+            <section className={styles.VideoListContainer}>
+                <Container>
+                    <div className={styles.Spacer}></div>
+                    <VideosListComponent key="test" videos={videos}></VideosListComponent>
+                </Container>
+            </section>
+        </>
 
-        <section className={styles.VideoListContainer}>
-            <Container>
-                <div className={styles.Spacer}></div>
-                <VideosListComponent key="test" videos={videos}></VideosListComponent>
-            </Container>
-        </section>
     )
 
 }

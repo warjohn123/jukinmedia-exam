@@ -6,6 +6,76 @@
     background: #F0F0F0;
 }
 
+.VideoFilterBarContainer {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 100%;
+    max-width: 1070px;
+    margin: auto;
+    position: relative;
+
+    .VideoFilters {
+        display: flex;
+        line-height: 50px;
+
+        .VideoFilterDropdown {
+            margin-right: 30px;
+        }
+
+        .ListView {
+            width: 25px;
+            height: 25px;
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAABkCAMAAAC1gDDDAAAAAXNSR0IB2cksfwAAAKtQTFRFqamp5OTk9PT06enpuLi49vb27e3t+Pj4+vr6/Pz87u7uzs7O7+/v9fX18fHx////8E84+sfA/ejm+9LN8m9c+9LM/e3q+9vW/fHv/vb1/vn4/N3Z9puO/N/b/ezp/fLw/OTgw8PDvr6+2tra3d3d8PDw2dnZ6Ojo3t7eycnJx8fHrq6u9IV183pp+LSq+bqx/ODc+LGn+9PN+9HL+by0+LOp9ZCC9Y1+8FlDivUDtgAAAPFJREFUeJzN08luwkAQBNAxE3ASDI1xWAI2OwSyQiDA/38ZQ1cjpSVfOAz4XUoqya06eIxhQQlZsuY/P/UDs2VkuYI0loWPyKcQeTnyLEcCfdtLXWVRDRlGSNldqctuK7vB5t/2U1Ou4tcNFjeRzQTptX5hrTay3UGahHVfkb0u8nKkL0difdtLnbJsgBxmSNndGcnuluzGR0n+bT91cX6f62p+yTQ2OXzVE2dKs6pmAieiudXuMXDhWHpbarJ7sdJuMPD9QyvQ73NdfX4pKX02NK/1l/NNP6lmYiejdaLdY+DG+aXtTpPdf3vtBgMPR+0Eefpzl47fl4EAAAAASUVORK5CYII=) 0px -50px no-repeat;
+            cursor: pointer;
+            margin-top: 16px;
+        }
+
+        .GridView {
+            width: 25px;
+            height: 25px;
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAABkCAMAAAC1gDDDAAAAAXNSR0IB2cksfwAAAKtQTFRFqamp5OTk9PT06enpuLi49vb27e3t+Pj4+vr6/Pz87u7uzs7O7+/v9fX18fHx////8E84+sfA/ejm+9LN8m9c+9LM/e3q+9vW/fHv/vb1/vn4/N3Z9puO/N/b/ezp/fLw/OTgw8PDvr6+2tra3d3d8PDw2dnZ6Ojo3t7eycnJx8fHrq6u9IV183pp+LSq+bqx/ODc+LGn+9PN+9HL+by0+LOp9ZCC9Y1+8FlDivUDtgAAAPFJREFUeJzN08luwkAQBNAxE3ASDI1xWAI2OwSyQiDA/38ZQ1cjpSVfOAz4XUoqya06eIxhQQlZsuY/P/UDs2VkuYI0loWPyKcQeTnyLEcCfdtLXWVRDRlGSNldqctuK7vB5t/2U1Ou4tcNFjeRzQTptX5hrTay3UGahHVfkb0u8nKkL0difdtLnbJsgBxmSNndGcnuluzGR0n+bT91cX6f62p+yTQ2OXzVE2dKs6pmAieiudXuMXDhWHpbarJ7sdJuMPD9QyvQ73NdfX4pKX02NK/1l/NNP6lmYiejdaLdY+DG+aXtTpPdf3vtBgMPR+0Eefpzl47fl4EAAAAASUVORK5CYII=) 0px 4px no-repeat;
+            cursor: pointer;
+            margin-left: 30px;
+            margin-top: 16px;
+        }
+    }
+
+    .VideoFilterClock {
+        list-style: none;
+        text-align: center;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+        line-height: 50px;
+        height: 50px;
+        padding-left: 0;
+
+        li {
+            display: inline;
+            font-weight: 100;
+            font-size: 30px;
+            color: rgb(240, 79, 56);
+            letter-spacing: 2px;
+            // text-shadow: rgb(240 79 56) -1px 0px, rgb(240 79 56) 0px 1px, rgb(240 79 56) 1px 0px, rgb(240 79 56) 0px -1px;
+        }
+    }
+
+    .VideoFilterDate {
+        color: rgb(98, 98, 98);
+        font-size: 17px;
+        font-weight: 700;
+        text-transform: uppercase;
+        border-left: 2px solid rgb(133, 147, 160);
+        padding: 7.5px 0px 7.5px 20px;
+
+        .VideoFilterClockDay {
+            font-weight: normal;
+            padding-bottom: 3px;
+            display: block;
+            font-size: 15px;
+        }
+    }
+}
+
 .VideoItem {
     box-shadow: rgba(51, 51, 51, 0.33) 0px 0px 7px 0px;
 
