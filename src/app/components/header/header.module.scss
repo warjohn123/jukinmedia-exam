@@ -1,8 +1,25 @@
 .Navbar {
-    color: white;
+    background: white;
+    animation: fadeIn ease 10s;
+  -webkit-animation: fadeIn ease 10s;
+  -moz-animation: fadeIn ease 10s;
+  -o-animation: fadeIn ease 10s;
+  -ms-animation: fadeIn ease 10s;
+
+    .NavLink {
+        margin-right: 10px;
+    }
+}
+
+.NavbarScrolled {
+    background: transparent;
+    animation: fadeIn ease 10s;
+  -webkit-animation: fadeIn ease 10s;
+  -moz-animation: fadeIn ease 10s;
+  -o-animation: fadeIn ease 10s;
+  -ms-animation: fadeIn ease 10s;
 
     .NavLink {
         color: white !important;
-        margin-right: 10px;
     }
 }
