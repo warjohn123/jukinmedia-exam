@@ -9,10 +9,14 @@ export function VideoItemComponent(props: any) {
     return (
         <Card className={styles.VideoItem}>
             <Card.Body>
-
-
                 <Row>
-                    <Col>
+                    <Col md={12} lg={{ order: 2, span: 6 }}>
+                        <div className={styles.VideoPlayer}>
+                            <button className={styles.VideoPlayButton}></button>
+                            <img className={styles.VideoThumbnail} src="https://thumbnails-dev.jukinmedia.com/thumbnail-1615935662923.jpg" />
+                        </div>
+                    </Col>
+                    <Col md={12} lg={{ order: 1, span: 6 }}>
                         <p className={styles.VideoTitle}>
                             When I was test
                         </p>
@@ -52,12 +56,6 @@ export function VideoItemComponent(props: any) {
                             </tbody>
                         </table>
 
-                    </Col>
-                    <Col>
-                        <div className={styles.VideoPlayer}>
-                            <button className={styles.VideoPlayButton}></button>
-                            <img className={styles.VideoThumbnail} src="https://thumbnails-dev.jukinmedia.com/thumbnail-1615935662923.jpg" />
-                        </div>
                     </Col>
                 </Row>
             </Card.Body>

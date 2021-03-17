@@ -35,8 +35,8 @@ export function HeaderComponent() {
                         <Nav.Link className={styles.NavLink}>Pricing</Nav.Link>
                         <Nav.Link className={styles.NavLink}>The Wire</Nav.Link>
                         <Nav.Link className={styles.NavLink}>Contact Us</Nav.Link>
-                        <Button variant={isTop ? 'outline-dark' : 'outline-light'} style={{ marginRight: 7 }}>SIGN IN</Button>
-                        <Button variant="danger" style={{ marginLeft: 7 }}>SIGN UP</Button>
+                        <Button className={styles.SignIn} variant={isTop ? 'outline-dark' : 'outline-light'}>SIGN IN</Button>
+                        <Button className={styles.SignUp} variant="danger">SIGN UP</Button>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
