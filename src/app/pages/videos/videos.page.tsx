@@ -10,33 +10,40 @@ import { VideoModel } from "../../models/video.model";
 
 export function VideosPage() {
 
-    const [videos, setVideos] = useState<any[]>([{}, {}, {}, {}]);
+    const [videos, setVideos] = useState<VideoModel[]>([]);
+    const [isLoading, setIsLoading] = useState<boolean>(false);
+    const [offset, setOffset] = useState<number>(0);
+
+    window.onbeforeunload = function () {
+        window.scrollTo(0, 0);
+    }
 
     function handleScroll() {
-        if (window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight) return;
-        getVideos();
+        if (!isLoading) {
+            getVideos(offset);
+        }
     }
 
     useEffect(() => {
-        getVideos();
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+        getVideos(offset);
     }, []);
 
-    const getVideos = async () => {
+    const getVideos = async (offset: number) => {
         try {
-            // let videos = new VideoApi().getVideos();
-            let addedVideos = [
-                {}, {}, {}
-            ];
-            setVideos([...videos, ...addedVideos])
-        } catch (e) {
+            setIsLoading(true);
+            let data = await new VideoApi().getVideos(offset);
 
+            setVideos([...videos, ...data]);
+            setIsLoading(false);
+
+            setOffset((offset || 0) + 12);
+        } catch (e) {
+            console.log('error', e);
         }
     };
 
     //bottom scroll listener 
-    useBottomScrollListener(getVideos, {
+    useBottomScrollListener(handleScroll, {
         offset: 100,
         debounce: 0,
         triggerOnNoScroll: true
@@ -56,6 +63,12 @@ export function VideosPage() {
                 <Container>
                     <div className={styles.Spacer}></div>
                     <VideosListComponent key="test" videos={videos}></VideosListComponent>
+
+                    {
+                        isLoading && (
+                            <h1 className="text-center pt-5 pb-5">Loading videos</h1>
+                        )
+                    }
                 </Container>
             </section>
         </>

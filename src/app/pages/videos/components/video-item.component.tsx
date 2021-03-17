@@ -1,10 +1,16 @@
 import React from "react";
 import { Card, Col, Row } from "react-bootstrap";
+import { VideoModel } from "../../../models/video.model";
 
 import styles from "../videos.module.scss";
 
-export function VideoItemComponent(props: any) {
+interface VideoItemComponentType {
+    video: VideoModel;
+}
 
+export const VideoItemComponent: React.FunctionComponent<VideoItemComponentType> = ({
+    video
+}) => {
 
     return (
         <Card className={styles.VideoItem}>
@@ -13,12 +19,12 @@ export function VideoItemComponent(props: any) {
                     <Col md={12} lg={{ order: 2, span: 6 }}>
                         <div className={styles.VideoPlayer}>
                             <button className={styles.VideoPlayButton}></button>
-                            <img className={styles.VideoThumbnail} src="https://thumbnails-dev.jukinmedia.com/thumbnail-1615935662923.jpg" />
+                            <img className={styles.VideoThumbnail} src={video.imgUrl} />
                         </div>
                     </Col>
                     <Col md={12} lg={{ order: 1, span: 6 }}>
                         <p className={styles.VideoTitle}>
-                            When I was test
+                            {video.title}
                         </p>
 
                         <table>
@@ -39,13 +45,13 @@ export function VideoItemComponent(props: any) {
                                     <td className={styles.VideoDetail}>
                                         Views:
                                     </td>
-                                    <td>3976925</td>
+                                    <td>{video.views}</td>
                                 </tr>
                                 <tr>
                                     <td className={styles.VideoDetail}>
                                         Location:
                                     </td>
-                                    <td>N/A</td>
+                                    <td>{video.location ? video.location : 'N/A'}</td>
                                 </tr>
                                 <tr>
                                     <td className={styles.VideoDetail}>
