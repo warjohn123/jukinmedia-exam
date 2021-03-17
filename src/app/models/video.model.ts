@@ -56,3 +56,9 @@ export interface VideoTag {
     subtype: any;
     tagId: number;
 }
+
+
+export enum VideoListDisplayType {
+    list = "list",
+    grid = "grid"
+}

@@ -1,22 +1,24 @@
 import React from "react";
 import { Card, Col, Row } from "react-bootstrap";
-import { VideoModel } from "../../../models/video.model";
+import { VideoListDisplayType, VideoModel } from "../../../models/video.model";
 
 import styles from "../videos.module.scss";
 
 interface VideoItemComponentType {
     video: VideoModel;
+    displayType?: string;
 }
 
 export const VideoItemComponent: React.FunctionComponent<VideoItemComponentType> = ({
-    video
+    video,
+    displayType
 }) => {
 
     return (
         <Card className={styles.VideoItem}>
             <Card.Body>
                 <Row>
-                    <Col md={12} lg={{ order: 2, span: 6 }}>
+                    <Col md={12} lg={{ order: displayType == VideoListDisplayType.grid ? 1 : 2, span: displayType == VideoListDisplayType.grid ? 12 : 6 }}>
                         <div className={styles.VideoPlayer}>
                             <button className={styles.VideoPlayButton}></button>
                             <img alt="video" className={styles.VideoThumbnail} src={video.imgUrl} />

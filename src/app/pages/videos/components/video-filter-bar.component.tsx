@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import styles from "../videos.module.scss";
 import { Col, Form, Row } from "react-bootstrap";
+import { VideoListDisplayType } from "../../../models/video.model";
 
 interface DateDisplay {
     hours: string;
@@ -10,7 +11,15 @@ interface DateDisplay {
     ampm: string;
 }
 
-export function VideoFilterBarComponent(props: any) {
+interface VideoFilterBarComponentType {
+    displayType: string;
+    onSelectDisplayType: any;
+}
+
+export const VideoFilterBarComponent: React.FunctionComponent<VideoFilterBarComponentType> = ({
+    onSelectDisplayType,
+    displayType
+}) => {
 
     const formatAMPM = (date: Date): DateDisplay => {
         var hours = date.getHours();
@@ -81,8 +90,8 @@ export function VideoFilterBarComponent(props: any) {
                         </Form.Group>
                     </div>
 
-                    <div className={styles.ListView}></div>
-                    <div className={styles.GridView}></div>
+                    <div onClick={() => onSelectDisplayType(VideoListDisplayType.list)} className={styles.ListView}></div>
+                    <div onClick={() => onSelectDisplayType(VideoListDisplayType.grid)} className={styles.GridView}></div>
                 </Col>
 
             </Row>

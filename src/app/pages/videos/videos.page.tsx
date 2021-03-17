@@ -6,13 +6,14 @@ import { VideoFilterBarComponent } from "./components/video-filter-bar.component
 import styles from "./videos.module.scss";
 import { VideoPageHeaderComponent } from "./components/video-page-header.component";
 import { useBottomScrollListener } from 'react-bottom-scroll-listener';
-import { VideoModel } from "../../models/video.model";
+import { VideoListDisplayType, VideoModel } from "../../models/video.model";
 
 export function VideosPage() {
 
     const [videos, setVideos] = useState<VideoModel[]>([]);
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [offset, setOffset] = useState<number>(0);
+    const [displayType, setDisplayType] = useState<string>(VideoListDisplayType.list);
 
     window.onbeforeunload = function () {
         window.scrollTo(0, 0);
@@ -56,13 +57,13 @@ export function VideosPage() {
             </section>
             <section>
                 <Container>
-                    <VideoFilterBarComponent></VideoFilterBarComponent>
+                    <VideoFilterBarComponent displayType={displayType} onSelectDisplayType={setDisplayType}></VideoFilterBarComponent>
                 </Container>
             </section>
             <section className={styles.VideoListContainer}>
                 <Container>
                     <div className={styles.Spacer}></div>
-                    <VideosListComponent key="test" videos={videos}></VideosListComponent>
+                    <VideosListComponent displayType={displayType} key="test" videos={videos}></VideosListComponent>
 
                     {
                         isLoading && (
