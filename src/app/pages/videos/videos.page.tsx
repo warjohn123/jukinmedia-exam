@@ -40,7 +40,7 @@ export function VideosPage() {
 
     useEffect(() => {
         getVideos(offset);
-    }, [getVideos, offset]);
+    }, []);
 
     //bottom scroll listener 
     useBottomScrollListener(handleScroll, {
