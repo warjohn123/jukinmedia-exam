@@ -19,7 +19,7 @@ export const VideoItemComponent: React.FunctionComponent<VideoItemComponentType>
                     <Col md={12} lg={{ order: 2, span: 6 }}>
                         <div className={styles.VideoPlayer}>
                             <button className={styles.VideoPlayButton}></button>
-                            <img className={styles.VideoThumbnail} src={video.imgUrl} />
+                            <img alt="video" className={styles.VideoThumbnail} src={video.imgUrl} />
                         </div>
                     </Col>
                     <Col md={12} lg={{ order: 1, span: 6 }}>

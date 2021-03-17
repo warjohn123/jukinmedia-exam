@@ -24,7 +24,7 @@ export function HeaderComponent() {
         <div>
             <Navbar expand="lg" fixed="top" className={isTop ? styles.Navbar : styles.NavbarScrolled}>
                 <Navbar.Brand href="/" style={{ color: 'white' }}>
-                    <img style={{ width: 50, height: 47 }} src="https://miro.medium.com/max/778/1*5Y_IHFrNWreVa2r7jdQYGg.png"></img>
+                    <img alt="logo" style={{ width: 50, height: 47 }} src="https://miro.medium.com/max/778/1*5Y_IHFrNWreVa2r7jdQYGg.png"></img>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">

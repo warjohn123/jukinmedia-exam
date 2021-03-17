@@ -24,10 +24,6 @@ export function VideosPage() {
         }
     }
 
-    useEffect(() => {
-        getVideos(offset);
-    }, []);
-
     const getVideos = async (offset: number) => {
         try {
             setIsLoading(true);
@@ -41,6 +37,10 @@ export function VideosPage() {
             console.log('error', e);
         }
     };
+
+    useEffect(() => {
+        getVideos(offset);
+    }, [getVideos, offset]);
 
     //bottom scroll listener 
     useBottomScrollListener(handleScroll, {
