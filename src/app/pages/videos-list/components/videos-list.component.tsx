@@ -11,10 +11,9 @@ export function VideosListComponent(props: any) {
         <>
             {
                 props.videos.map((video: any, index: number) => (
-                    <>
-                        <VideoItemComponent video={video} key={index}></VideoItemComponent>
-                        <div className={styles.Spacer}></div>
-                    </>
+                    <div style={{ marginBottom: 20 }} key={index}>
+                        <VideoItemComponent video={video}></VideoItemComponent>
+                    </div>
                 ))
             }
         </>

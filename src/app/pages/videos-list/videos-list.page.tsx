@@ -5,22 +5,44 @@ import { VideosListComponent } from "./components/videos-list.component";
 import { VideoFilterBarComponent } from "./components/video-filter-bar.component";
 import styles from "./videos-list.module.scss";
 import { VideoPageHeaderComponent } from "./components/video-page-header.component";
+import { useBottomScrollListener } from 'react-bottom-scroll-listener';
+import { VideoModel } from "../../models/video.model";
 
 export function VideosPage() {
 
     const [videos, setVideos] = useState<any[]>([{}, {}, {}, {}]);
 
-    console.log('videos', videos.length);
-    useEffect(() => {
-        new VideoApi().getVideos().then((data) => {
-            // setUser(user);
+    function handleScroll() {
+        if (window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight) return;
+        getVideos();
+    }
 
-            console.log('data', data);
-        });
-    })
+    useEffect(() => {
+        getVideos();
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    const getVideos = async () => {
+        try {
+            // let videos = new VideoApi().getVideos();
+            let addedVideos = [
+                {}, {}, {}
+            ];
+            setVideos([...videos, ...addedVideos])
+        } catch (e) {
+
+        }
+    };
+
+    //bottom scroll listener 
+    useBottomScrollListener(getVideos, {
+        offset: 100,
+        debounce: 0,
+        triggerOnNoScroll: true
+    });
 
     return (
-
         <>
             <section>
                 <VideoPageHeaderComponent></VideoPageHeaderComponent>
