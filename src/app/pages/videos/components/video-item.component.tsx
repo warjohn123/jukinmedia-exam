@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, Col, Row } from "react-bootstrap";
 
-import styles from "../videos-list.module.scss";
+import styles from "../videos.module.scss";
 
 export function VideoItemComponent(props: any) {
 

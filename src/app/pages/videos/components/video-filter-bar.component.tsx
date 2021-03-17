@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import styles from "../videos-list.module.scss";
+import styles from "../videos.module.scss";
 import { Col, Form, Row } from "react-bootstrap";
 
 interface DateDisplay {

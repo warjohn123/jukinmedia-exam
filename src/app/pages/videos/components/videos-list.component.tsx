@@ -1,9 +1,6 @@
 import React from "react";
 import { VideoItemComponent } from "./video-item.component";
 
-import styles from "../videos-list.module.scss";
-
-
 export function VideosListComponent(props: any) {
 
 

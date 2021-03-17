@@ -3,7 +3,7 @@ import { Container } from "react-bootstrap";
 import { VideoApi } from "../../api/video.api";
 import { VideosListComponent } from "./components/videos-list.component";
 import { VideoFilterBarComponent } from "./components/video-filter-bar.component";
-import styles from "./videos-list.module.scss";
+import styles from "./videos.module.scss";
 import { VideoPageHeaderComponent } from "./components/video-page-header.component";
 import { useBottomScrollListener } from 'react-bottom-scroll-listener';
 import { VideoModel } from "../../models/video.model";

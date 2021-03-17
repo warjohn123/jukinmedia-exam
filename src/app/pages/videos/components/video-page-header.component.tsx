@@ -1,7 +1,7 @@
 import React from "react";
 import { Col, InputGroup, FormControl, Row } from "react-bootstrap";
 
-import styles from "../videos-list.module.scss";
+import styles from "../videos.module.scss";
 import { VideoHeroBarComponent } from "./video-hero-bar.component";
 
 export function VideoPageHeaderComponent() {

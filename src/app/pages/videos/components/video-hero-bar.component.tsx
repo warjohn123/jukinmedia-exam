@@ -1,6 +1,6 @@
 import React from "react";
 
-import styles from "../videos-list.module.scss";
+import styles from "../videos.module.scss";
 
 export function VideoHeroBarComponent() {
 
