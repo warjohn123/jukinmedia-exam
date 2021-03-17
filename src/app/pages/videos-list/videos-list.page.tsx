@@ -4,6 +4,7 @@ import { VideoApi } from "../../api/video.api";
 import { VideosListComponent } from "./components/videos-list.component";
 import { VideoFilterBarComponent } from "./components/video-filter-bar.component";
 import styles from "./videos-list.module.scss";
+import { VideoPageHeaderComponent } from "./components/video-page-header.component";
 
 export function VideosPage() {
 
@@ -21,7 +22,10 @@ export function VideosPage() {
     return (
 
         <>
-            <section style={{ marginTop: 100 }}>
+            <section>
+                <VideoPageHeaderComponent></VideoPageHeaderComponent>
+            </section>
+            <section>
                 <Container>
                     <VideoFilterBarComponent></VideoFilterBarComponent>
                 </Container>
